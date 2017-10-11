@@ -176,7 +176,6 @@ void O3d::createProfile(int num_perf){
             int num = this->numVertex();
             v1 = vertex[i].x;
             v2 = vertex[i].y;
-            v3 = vertex[i].z;
 
             //Sólo crearemos aquellos vertices que no estén en el eje Y, para no tener puntos repetidos
             if(v1 != 0){
