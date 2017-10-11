@@ -170,12 +170,6 @@ void O3d::createProfile(int num_perf){
     int tama = this->numVertex();
     int caras = this->numFaces();
 
-    //Con el siguiente bucle contamos cuantos puntos tiene el perfil fuera del eje Y
-    for(int i=0; i<tama; i++){
-        if(vertex[i].x != 0)
-            fueraEje++;
-    }
-
     //Dentro del while iremos creando los nuevos perfiles
     while(step < num_perf){
         for(int i=0; i<tama;i++){
@@ -186,6 +180,9 @@ void O3d::createProfile(int num_perf){
 
             //Sólo crearemos aquellos vertices que no estén en el eje Y, para no tener puntos repetidos
             if(v1 != 0){
+
+	       fueraEje++; //Con el siguiente bucle contamos cuantos puntos tiene el perfil fuera del eje Y
+
                v1 = cos(perfiles_hechos)*v1;
                v3 = sin(perfiles_hechos)*vertex[i].x;
 
